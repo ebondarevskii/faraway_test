@@ -164,6 +164,7 @@ export const CharacterDetailsPage = () => {
   }
 
   const backTo = location.search ? `/${location.search}` : "/";
+  const displayName = mergedValues.name || query.data.name;
 
   const handleSave = (data: EditablePersonFields) => {
     saveLocalEdits(id, data);
@@ -185,7 +186,7 @@ export const CharacterDetailsPage = () => {
               level={2}
               className="mb-1! text-yellow-300 drop-shadow-[0_0_18px_rgba(245,197,24,0.25)]"
             >
-              {query.data.name}
+              {displayName}
             </Typography.Title>
             <Typography.Text type="secondary">Edit and save</Typography.Text>
           </div>
