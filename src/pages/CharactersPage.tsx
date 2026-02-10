@@ -29,6 +29,11 @@ export const CharactersPage = () => {
     setSearchParams(params, { replace: true });
   };
 
+  const handlePageChange = (nextPage: number) => {
+    updateParams(nextPage, search);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const detailsQuery = useMemo(() => {
     const params = new URLSearchParams();
     params.set("page", String(page));
@@ -108,7 +113,7 @@ export const CharactersPage = () => {
           totalItems={query.data?.count ?? 0}
           pageSize={pageSize}
           isLoading={query.isFetching}
-          onChange={(value) => updateParams(value, search)}
+          onChange={handlePageChange}
         />
       </div>
     </div>

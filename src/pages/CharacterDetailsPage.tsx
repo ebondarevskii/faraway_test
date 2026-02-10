@@ -1,4 +1,4 @@
-import { Button, Card, Col, Input, Row, Typography } from "antd";
+import { App, Button, Card, Col, Input, Row, Typography } from "antd";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useMemo, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -95,6 +95,7 @@ export const CharacterDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
   const navigate = useNavigate();
+  const { message } = App.useApp();
   const [localEdits, setLocalEdits] = useState<EditablePersonFields | null>(
     null,
   );
@@ -170,6 +171,7 @@ export const CharacterDetailsPage = () => {
   const handleSave = (data: EditablePersonFields) => {
     saveLocalEdits(id, data);
     setLocalEdits(data);
+    message.success("Changes saved locally");
   };
 
   const handleReset = () => {
