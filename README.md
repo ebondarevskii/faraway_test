@@ -34,6 +34,13 @@ Output is in the `dist/` folder. To preview the production build:
 npm run preview
 ```
 
+## Tests
+
+```bash
+npm run test        # watch mode — re-runs on file change
+npm run test:run    # single run, then exit
+```
+
 ## Other commands
 
 - `npm run lint` — run ESLint

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import type { SwapiListResponse, SwapiPerson } from '@app-types/swapi'
 
-const SWAPI_BASE_URL = 'https://swapi.py4e.com/api'
+export const SWAPI_BASE_URL = 'https://swapi.py4e.com/api'
 
 const apiClient = axios.create({
   baseURL: SWAPI_BASE_URL,
