@@ -1,6 +1,8 @@
-# Faraway — Test Task (SWAPI)
+# Faraway — Test Task
 
 Test task for Faraway: a small React app that lists and displays Star Wars characters using the [SWAPI](https://swapi.dev/) API.
+
+# Deploy link - https://faraway-test-tau.vercel.app/
 
 ## Tech stack
 
