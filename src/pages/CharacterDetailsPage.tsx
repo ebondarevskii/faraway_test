@@ -130,6 +130,10 @@ export const CharacterDetailsPage = () => {
   }, [id]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
+  useEffect(() => {
     if (query.data) {
       reset(mergedValues);
     }
