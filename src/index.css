@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+
+@layer base {
+  html {
+    background-color: #050508;
+    background-image: url("/starfield.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100%;
+  }
+
+  body {
+    @apply text-yellow-50 antialiased;
+    background: transparent;
+    min-height: 100%;
+  }
+}
