@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useEffect, useMemo, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import type { Control } from "react-hook-form";
-import { Link as RouterLink, useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { getPerson } from "@api/swapi";
 import { BirthYearField } from "@components/BirthYearField";
 import { ErrorState } from "@components/ErrorState";
@@ -94,6 +94,7 @@ const FormField = ({
 export const CharacterDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
+  const navigate = useNavigate();
   const [localEdits, setLocalEdits] = useState<EditablePersonFields | null>(
     null,
   );
@@ -190,9 +191,7 @@ export const CharacterDetailsPage = () => {
             </Typography.Title>
             <Typography.Text type="secondary">Edit and save</Typography.Text>
           </div>
-          <Button>
-            <RouterLink to={backTo}>Back to list</RouterLink>
-          </Button>
+          <Button onClick={() => navigate(backTo)}>Back to list</Button>
         </div>
 
         <Card className="border border-yellow-400/20 bg-black/60 shadow-[0_16px_40px_rgba(0,0,0,0.5)]">

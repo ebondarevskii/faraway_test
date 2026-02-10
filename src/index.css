@@ -16,4 +16,13 @@
     background: transparent;
     min-height: 100%;
   }
+
+  /* Prevent iOS zoom on input focus (requires font-size >= 16px on touch devices) */
+  @media (pointer: coarse) {
+    input,
+    select,
+    textarea {
+      font-size: 16px;
+    }
+  }
 }
